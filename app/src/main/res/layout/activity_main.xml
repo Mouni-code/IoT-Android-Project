@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity">
+
+    <!-- Grille de 6 TextViews (3x2) -->
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="3"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="50dp">
+
+        <!-- Ligne 1 -->
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:text="Service status: "
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:text=""
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <!-- Ligne 2 -->
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:text="Last result: "
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:text=""
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <!-- Ligne 3 -->
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:text="Last alert: "
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/tv6"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:text=""
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+    </GridLayout>
+
+    <!-- 2 boutons Switch (Toggle) -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="On/Off"
+            android:checked="false"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="On/Off"
+            android:checked="false"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <!-- CheckBox "Start at boot" -->
+    <CheckBox
+        android:id="@+id/checkboxStartAtBoot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Start at boot"
+        android:textSize="16sp"
+        android:checked="false" />
+
+    <Button
+        android:id="@+id/btnHttpRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Envoyer requête HTTP"
+        android:textSize="16sp"
+        android:backgroundTint="#4CAF50" />
+
+    <!-- ✅ NOUVEAU : ScrollView avec grande TextView -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Liste des mesures :"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:background="#F5F5F5"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvAllMeasures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aucune donnée pour le moment..."
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            android:lineSpacingExtra="4dp"
+            android:padding="8dp"
+            android:scrollbarStyle="insideOverlay"/>
+
+    </ScrollView>
+
+</LinearLayout>
