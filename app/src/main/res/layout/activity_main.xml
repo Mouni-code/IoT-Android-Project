@@ -1,168 +1,280 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center_horizontal"
-    tools:context=".MainActivity">
+    android:fillViewport="true">
 
-    <!-- Grille de 6 TextViews (3x2) -->
-    <GridLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:rowCount="3"
-        android:layout_marginBottom="24dp"
-        android:layout_marginTop="50dp">
-
-        <!-- Ligne 1 -->
-        <TextView
-            android:id="@+id/tv1"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:layout_margin="8dp"
-            android:background="@android:color/darker_gray"
-            android:gravity="center"
-            android:text="Service status: "
-            android:textSize="16sp"
-            android:padding="8dp" />
-
-        <TextView
-            android:id="@+id/tv2"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:layout_margin="8dp"
-            android:background="@android:color/darker_gray"
-            android:gravity="center"
-            android:text=""
-            android:textSize="16sp"
-            android:padding="8dp" />
-
-        <!-- Ligne 2 -->
-        <TextView
-            android:id="@+id/tv3"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:layout_margin="8dp"
-            android:background="@android:color/darker_gray"
-            android:gravity="center"
-            android:text="Last result: "
-            android:textSize="16sp"
-            android:padding="8dp" />
-
-        <TextView
-            android:id="@+id/tv4"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:layout_margin="8dp"
-            android:background="@android:color/darker_gray"
-            android:gravity="center"
-            android:text=""
-            android:textSize="16sp"
-            android:padding="8dp" />
-
-        <!-- Ligne 3 -->
-        <TextView
-            android:id="@+id/tv5"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:layout_margin="8dp"
-            android:background="@android:color/darker_gray"
-            android:gravity="center"
-            android:text="Last alert: "
-            android:textSize="16sp"
-            android:padding="8dp" />
-
-        <TextView
-            android:id="@+id/tv6"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:layout_margin="8dp"
-            android:background="@android:color/darker_gray"
-            android:gravity="center"
-            android:text=""
-            android:textSize="16sp"
-            android:padding="8dp" />
-
-    </GridLayout>
-
-    <!-- 2 boutons Switch (Toggle) -->
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp">
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/btn1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="On/Off"
-            android:checked="false"
-            android:textSize="18sp" />
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/btn2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="On/Off"
-            android:checked="false"
-            android:textSize="18sp" />
-
-    </LinearLayout>
-    <!-- CheckBox "Start at boot" -->
-    <CheckBox
-        android:id="@+id/checkboxStartAtBoot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Start at boot"
-        android:textSize="16sp"
-        android:checked="false" />
-
-    <Button
-        android:id="@+id/btnHttpRequest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Envoyer requête HTTP"
-        android:textSize="16sp"
-        android:backgroundTint="#4CAF50" />
-
-    <!-- ✅ NOUVEAU : ScrollView avec grande TextView -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Liste des mesures :"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginTop="24dp" />
-
-    <ScrollView
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="8dp"
-        android:background="#F5F5F5"
-        android:padding="8dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/background"
+        tools:context=".MainActivity">
 
+        <!-- Titre -->
         <TextView
-            android:id="@+id/tvAllMeasures"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Aucune donnée pour le moment..."
-            android:textSize="14sp"
-            android:fontFamily="monospace"
-            android:lineSpacingExtra="4dp"
-            android:padding="8dp"
-            android:scrollbarStyle="insideOverlay"/>
+            android:text="Surveillance des Lumières"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp" />
 
-    </ScrollView>
+        <!-- Section Capteurs Actifs -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Capteurs actifs"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="8dp" />
 
-</LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/card_background">
+
+            <LinearLayout
+                android:id="@+id/containerActiveSensors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/tvNoSensors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aucun capteur détecté"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:gravity="center"
+                    android:padding="16dp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card informations (Service status, etc.) -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/card_background">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="3"
+                android:padding="16dp"
+                android:alignmentMode="alignBounds">
+
+                <!-- Service Status -->
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:text="Service :"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:text="Arrêté"
+                    android:textSize="16sp"
+                    android:textColor="@color/error"
+                    android:padding="8dp" />
+
+                <!-- Last Alert -->
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:text="Dernière alerte :"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/tv4"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:text="Aucune"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_secondary"
+                    android:padding="8dp" />
+
+                <!-- Last Update -->
+                <TextView
+                    android:id="@+id/tv5"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:text="Dernière MàJ :"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/tv6"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:text="-"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_secondary"
+                    android:padding="8dp" />
+
+            </GridLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card contrôles -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Switch Service -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="Activer le service"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/btn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider"
+                    android:layout_marginVertical="8dp" />
+
+                <!-- Switch Notifications -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="Activer les notifications"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/btn2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider"
+                    android:layout_marginVertical="8dp" />
+
+                <!-- CheckBox -->
+                <CheckBox
+                    android:id="@+id/checkboxStartAtBoot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Démarrer au boot"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_primary"
+                    android:paddingVertical="8dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Bouton HTTP -->
+        <Button
+            android:id="@+id/btnHttpRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vérifier maintenant"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="@color/primary"
+            android:layout_marginBottom="16dp"
+            android:paddingVertical="12dp" />
+
+        <!-- Titre historique -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Historique des mesures"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Container pour les mesures (PAS de ScrollView imbriqué !) -->
+        <LinearLayout
+            android:id="@+id/containerMeasures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/tvNoData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aucune donnée pour le moment..."
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="center"
+                android:padding="32dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

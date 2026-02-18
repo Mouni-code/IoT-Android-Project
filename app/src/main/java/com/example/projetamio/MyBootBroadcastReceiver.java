@@ -41,7 +41,7 @@ public class MyBootBroadcastReceiver extends BroadcastReceiver {
 
                 Log.d("demarrage", " Service démarré avec succès !");
             } else {
-                Log.d("demarrage", " Démarrage automatique désactivé par l'utilisateur");
+                Log.d("demarrage1", " Démarrage automatique désactivé par l'utilisateur");
             }
         }
     }

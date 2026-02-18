@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Email -->
+    <PreferenceCategory
+        android:title="         "
+        android:iconSpaceReserved="false">
+
+        <EditTextPreference
+            android:key="email_address"
+            android:title="Adresse email"
+            android:summary="Email de destination"
+            android:defaultValue="brstuvh@gmail.com"
+            android:inputType="textEmailAddress"
+            android:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+    <!-- Horaires Notifications -->
+    <PreferenceCategory
+        android:title="Horaires des Notifications"
+        android:iconSpaceReserved="false">
+
+        <EditTextPreference
+            android:key="notif_start_hour"
+            android:title="Heure de début"
+            android:summary="Heure de début (0-23)"
+            android:defaultValue="19"
+            android:inputType="number"
+            android:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:key="notif_end_hour"
+            android:title="Heure de fin"
+            android:summary="Heure de fin (0-23)"
+            android:defaultValue="23"
+            android:inputType="number"
+            android:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+    <!-- Options Email -->
+    <PreferenceCategory
+        android:title="Envoi d'Emails"
+        android:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:key="email_weekend"
+            android:title="Email le week-end"
+            android:summary="Envoyer un email le week-end (19h-23h)"
+            android:defaultValue="true"
+            android:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="email_night"
+            android:title="Email la nuit"
+            android:summary="Envoyer un email la nuit en semaine (23h-6h)"
+            android:defaultValue="true"
+            android:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+    <!-- Détection -->
+    <PreferenceCategory
+        android:title="Paramètres de Détection"
+        android:iconSpaceReserved="false">
+
+        <EditTextPreference
+            android:key="light_threshold"
+            android:title="Seuil de luminosité"
+            android:summary="Valeur seuil pour détecter une lumière allumée"
+            android:defaultValue="500"
+            android:inputType="number"
+            android:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:key="check_interval"
+            android:title="Intervalle de vérification"
+            android:summary="Intervalle en secondes"
+            android:defaultValue="30"
+            android:inputType="number"
+            android:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="8dp"
+    app:cardBackgroundColor="@color/card_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Header avec état -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <!-- Indicateur visuel (cercle coloré) -->
+            <View
+                android:id="@+id/statusIndicator"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@drawable/circle_indicator"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/tvMeasureNumber"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Mesure #1"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ALLUMÉE"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/light_on"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:background="@drawable/status_badge" />
+
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Infos -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Luminosité -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="2dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:text="Luminosité :"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tvLightValue"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="542.86"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <!-- Capteur -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="2dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:text="Capteur :"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:id="@+id/tvMote"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="9.138"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_primary"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <!-- Label -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="2dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:text="Label :"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:id="@+id/tvLabel"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="light1"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_primary"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <!-- Date -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="2dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:text="Date :"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="18/02/2026 15:30"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_primary"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
