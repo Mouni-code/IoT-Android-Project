@@ -242,7 +242,7 @@ Détecté à : 18/02/2026 16:37:31
 
 ---
 
-## ⚠️ Limitations et tests
+## Limitations et tests
 
 ### Limitations techniques
 
@@ -265,7 +265,7 @@ L'application nécessite une connexion au serveur IoTLab de TELECOM Nancy :
 
 ### Tests non effectués
 
-❌ **Tests impossibles à réaliser**
+ **Tests impossibles à réaliser**
 
 **Raison principale : Problème de connectivité VPN**
 
